@@ -1,0 +1,228 @@
+.timer-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Source Serif 4', serif;
+  min-height: 100vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  margin-top: -80px; /* negative margin to pull it up behind navbar */
+}
+
+.navbar {
+  background-color: transparent;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  font-family: 'Source Serif 4', serif;
+  margin: 0;
+}
+
+/* different backgrounds */
+.background-focus {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.background-energize {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.background-calm {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.background-random {
+  background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+}
+
+.background-classic {
+  background: #f5f5f5;
+}
+
+.timer-content {
+  text-align: center;
+  color: white;
+}
+
+.background-classic .timer-content {
+  color: black;
+}
+
+.timer-content h2 {
+  font-size: 80px;
+  font-weight: normal;
+  margin-bottom: 1%;
+}
+
+.timer-display {
+  font-size: 180px;
+  font-weight: bold;
+  margin: 1%;
+}
+
+.timer-controls {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.timer-button {
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  border-radius: 8px;
+  font-size: 20px;
+  cursor: pointer;
+  font-family: 'Source Serif 4', serif;
+  padding: 10px 40px;
+  flex: 1;
+  min-width: 180px;
+  white-space: nowrap;
+}
+
+.background-classic .timer-button {
+  background-color: black;
+  border-color: black;
+}
+
+.timer-button:hover, .end-session-button:hover {
+  background-color: white;
+  color: black;
+}
+
+.background-classic {
+  background-color: transparent;
+  border-color: black;
+  color: black;
+}
+
+.end-session-button {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  font-family: 'Source Serif 4', serif;
+  padding: 10px 20px;
+  white-space: nowrap;
+}
+
+/* summary content */
+.summary-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.summary-popup {
+  background-color: white;
+  border-radius: 30px;
+  padding: 2rem 4rem; 
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  text-align: left;
+  color: black;
+  max-width: 700px;
+  width: 60%;
+  position: relative;
+}
+
+.summary-popup h2 {
+  font-size: 60px;
+  font-weight: normal;
+  margin: 0;
+  margin-bottom: 0.5rem;
+  color: black;
+  text-align: center;
+}
+
+.summary-subtitle {
+  font-size: 30px;
+  margin: 0;
+  margin-bottom: 2rem;
+  color: black;
+  text-align: center;
+}
+
+.summary-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.summary-stat {
+  font-size: 20px;
+  color: black;
+  margin: 0.5rem;
+}
+
+.new-session-button {
+  background-color: black;
+  color: white;
+  border: solid 1px black;
+  border-radius: 8px;
+  font-size: 20px;
+  cursor: pointer;
+  font-family: 'Source Serif 4', serif;
+  padding: 12px 40px;
+  margin-bottom: 1rem;
+  display: block;
+  width: fit-content;
+}
+
+.new-session-button:hover {
+  background-color: #f9f9f9;
+  border: solid 1px black;
+  color: black;
+}
+
+.exit-button {
+  position: absolute;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  background-color: transparent;
+  color: black;
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: 'Source Serif 4', serif;
+}
+
+.exit-button:hover {
+  color: blue;
+}
+
+.summary-layout {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  gap: 1rem;
+  margin: 0 4rem;
+}
+
+.summary-left {
+  flex: 1;
+  text-align: center;
+}
+
+.summary-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}

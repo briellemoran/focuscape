@@ -1,25 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
+import Navbar from './Navbar';
+import Main from './Main';
+import Home from './Home';
+import Customize from './Customize';
+import Timer from './Timer';
+import Settings from './Settings';
+import { StudyProvider } from './StudyContext';
 
 function App() {
+  const [isSettingsOpen, setIsSettingsOpen] = useState(false);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <StudyProvider>
+      <Router>
+        <div className="App">
+          <Navbar onSettingsClick={() => setIsSettingsOpen(true)} />
+          <Settings isOpen={isSettingsOpen} onClose={() => setIsSettingsOpen(false)} />
+          <Routes>
+            <Route path="/" element={<Main />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/customize" element={<Customize />} />
+            <Route path="/timer" element={<Timer />} />
+          </Routes>
+        </div>
+      </Router>
+    </StudyProvider>
   );
 }
 

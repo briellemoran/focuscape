@@ -1,0 +1,9 @@
+.circular-chart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circular-chart svg {
+  transform: scale(1);
+}

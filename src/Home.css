@@ -1,0 +1,77 @@
+.home-page h3 {
+  font-family: 'Source Serif 4', serif;
+  font-size: 150px;
+  font-weight: bold;
+  color: black;
+  margin: 1%;
+}
+
+.home-page h2 {
+  font-family: 'Source Serif 4', serif;
+  font-size: 80px;
+  font-weight: normal;
+  color: black;
+  margin: 1%;
+}
+
+p {
+  font-family: 'Source Serif 4', serif;
+  font-size: 20px;
+  color: black;
+}
+
+.home-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 80%;
+}
+
+.method-details {
+  min-height: 100px; /* reserved space */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0 2rem 0;
+}
+
+.method-info {
+  font-family: 'Source Serif 4', serif;
+  font-size: 24px;
+  color: black;
+  margin: 0;
+}
+
+.custom-timer-inputs {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-end;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.input-group label {
+  font-family: 'Source Serif 4', serif;
+  font-size: 18px;
+  color: black;
+}
+
+.input-group input {
+  padding: 10px 15px;
+  border: 2px solid black;
+  border-radius: 8px;
+  font-size: 18px;
+  font-family: 'Source Serif 4', serif;
+  width: 150px;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: #666;
+}
