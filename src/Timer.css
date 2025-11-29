@@ -8,7 +8,7 @@
   width: 100%;
   margin: 0;
   padding: 0;
-  margin-top: -80px; /* negative margin to pull it up behind navbar */
+  margin-top: -87px; /* negative margin to pull it up behind navbar */
 }
 
 .navbar {
@@ -45,6 +45,7 @@
 .timer-content {
   text-align: center;
   color: white;
+  padding: 0;
 }
 
 .background-classic .timer-content {
@@ -52,41 +53,50 @@
 }
 
 .timer-content h2 {
-  font-size: 80px;
+  font-size: clamp(40px, 8vmin, 80px);
   font-weight: normal;
-  margin-bottom: 1%;
+  padding: 0;
+  margin: 0;
 }
 
 .timer-display {
-  font-size: 180px;
+  font-size: clamp(100px, 25vmin, 200px);
   font-weight: bold;
-  margin: 1%;
+  padding: 0;
+  margin: -2.5rem 0 0 0;
 }
 
 .timer-controls {
   display: flex;
   gap: 1rem;
+  align-items: center;
   justify-content: center;
-  margin: 2rem 0;
+  margin: -2rem 0 0 0;
+  flex-wrap: wrap; /* wraps on small screens */
 }
 
 .timer-button {
   background-color: transparent;
   color: white;
-  border: 1px solid white;
+  border: 1.5px solid white;
   border-radius: 8px;
-  font-size: 20px;
+  font-size: clamp(12px, 2vmin, 16px);
   cursor: pointer;
   font-family: 'Source Serif 4', serif;
-  padding: 10px 40px;
-  flex: 1;
-  min-width: 180px;
+  min-width: 80px;
+  padding: 0.5rem 1rem;
   white-space: nowrap;
 }
 
 .background-classic .timer-button {
-  background-color: black;
+  background-color: #f9f9f9;
   border-color: black;
+  color: black;
+}
+
+.background-classic .timer-button:hover {
+  background-color: black;
+  color: #F9F9F9;
 }
 
 .timer-button:hover, .end-session-button:hover {
@@ -108,11 +118,22 @@
   color: white;
   border: 1px solid white;
   border-radius: 8px;
-  font-size: 16px;
+  font-size: clamp(14px, 1.5vmin, 16px);
   cursor: pointer;
   font-family: 'Source Serif 4', serif;
-  padding: 10px 20px;
+  padding: 0.5rem 1rem;
   white-space: nowrap;
+}
+
+.background-classic .end-session-button {
+  background-color: #f9f9f9;
+  color: black;
+  border-color: black;
+}
+
+.background-classic .end-session-button:hover {
+  background-color: black;
+  color: #f9f9f9;
 }
 
 /* summary content */
@@ -126,6 +147,7 @@
   justify-content: center;
   align-items: center;
   z-index: 1000;
+  padding: 2rem;
 }
 
 .summary-popup {
@@ -136,12 +158,12 @@
   text-align: left;
   color: black;
   max-width: 700px;
-  width: 60%;
+  width: 70%;
   position: relative;
 }
 
 .summary-popup h2 {
-  font-size: 60px;
+  font-size: clamp(40px, 8vmin, 60px);
   font-weight: normal;
   margin: 0;
   margin-bottom: 0.5rem;
@@ -150,7 +172,7 @@
 }
 
 .summary-subtitle {
-  font-size: 30px;
+  font-size: clamp(18px, 3vmin, 30px);
   margin: 0;
   margin-bottom: 2rem;
   color: black;
@@ -166,7 +188,7 @@
 }
 
 .summary-stat {
-  font-size: 20px;
+  font-size: clamp(16px, 2.5vmin, 20px);
   color: black;
   margin: 0.5rem;
 }
@@ -176,10 +198,10 @@
   color: white;
   border: solid 1px black;
   border-radius: 8px;
-  font-size: 20px;
+  font-size: clamp(16px, 2vmin, 20px);
   cursor: pointer;
   font-family: 'Source Serif 4', serif;
-  padding: 12px 40px;
+  padding: 0.75rem 2rem;
   margin-bottom: 1rem;
   display: block;
   width: fit-content;
@@ -198,31 +220,60 @@
   background-color: transparent;
   color: black;
   border: none;
-  font-size: 20px;
+  font-size: clamp(16px, 2vmin, 20px);
   font-weight: bold;
   cursor: pointer;
   font-family: 'Source Serif 4', serif;
 }
 
 .exit-button:hover {
-  color: blue;
+  color: #ADADAD;
 }
 
 .summary-layout {
   display: flex;
   justify-content: space-around;
   align-items: flex-start;
-  gap: 1rem;
-  margin: 0 4rem;
+  gap: 2rem;
+  flex-wrap: wrap;
 }
 
 .summary-left {
   flex: 1;
   text-align: center;
+  min-width: 200px;
 }
 
 .summary-right {
   flex: 1;
   display: flex;
   justify-content: center;
+  min-width: 200px;
+}
+
+.timer-icon-button {
+  background-color: transparent;
+  color: white;
+  font-size: clamp(20px, 4vmin, 26px);
+  border: none;
+  cursor: pointer;
+  font-family: 'Source Serif 4', serif;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(50px, 8vmin, 70px);
+  height: clamp(50px, 8vmin, 70px);
+}
+
+.background-classic .timer-icon-button {
+  color: black;
+}
+
+.timer-icon-button:hover {
+  color: black;
+}
+
+.background-classic .timer-icon-button:hover {
+  color: #ADADAD;
 }

@@ -11,8 +11,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 95%;
-  padding: 1% 2%;
+  width: 100%;
+  padding: 1rem 2rem;
+  box-sizing: border-box
 }
 
 .navbar-logo {
@@ -27,7 +28,7 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 .navbar-link {
@@ -47,7 +48,7 @@
 }
 
 .navbar-link:hover {
-  color: blue;
+  color: #ADADAD;
 }
 
 .navbar-logo-link {
@@ -55,5 +56,5 @@
 }
 
 .navbar-logo:hover {
-    color: blue;
+    color: #ADADAD;
 }

@@ -15,7 +15,7 @@ function Settings({ isOpen, onClose }: SettingsProps) {
       {/* sidebar */}
       <div className={`settings-sidebar ${isOpen ? 'open' : ''}`}>
         <div className="settings-header">
-          <h2>Settings</h2>
+          <h2>settings</h2>
           <button className="close-button" onClick={onClose}>✕</button>
         </div>
         

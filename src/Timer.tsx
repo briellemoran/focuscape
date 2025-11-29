@@ -2,9 +2,14 @@ import React, { useState, useEffect } from 'react';
 import './Timer.css';
 import { useStudy } from './StudyContext';
 import CircularChart from './CircularChart';
+import { IoPlayOutline, IoPauseOutline, IoRefreshOutline } from 'react-icons/io5';
 
 function Timer() {
   const { selectedMethod, selectedBackground, customWorkTime, customBreakTime } = useStudy();
+
+  const PlayIcon = IoPlayOutline as React.ComponentType<{ size?: number }>;
+  const PauseIcon = IoPauseOutline as React.ComponentType<{ size?: number }>;
+  const RefreshIcon = IoRefreshOutline as React.ComponentType<{ size?: number }>;
   
   //timer state
   const [minutes, setMinutes] = useState(25);
@@ -240,21 +245,21 @@ function Timer() {
           {String(minutes).padStart(2, '0')}:{String(seconds).padStart(2, '0')}
         </div>
         <div className="timer-controls">
-          <button className="timer-button" onClick={toggleTimer}>
-            {isRunning ? 'pause' : 'start'}
-          </button>
-          <button className="timer-button" onClick={resetTimer}>
-            reset
-          </button>
-          {isWorkTime ? (
+            <button className="timer-icon-button" onClick={toggleTimer}>
+            {isRunning ? <PauseIcon size={40} /> : <PlayIcon size={40} />}
+            </button>
+            <button className="timer-icon-button" onClick={resetTimer}>
+            <RefreshIcon size={40} />
+            </button>
+            {isWorkTime ? (
             <button className="timer-button" onClick={skipToBreak}>
-              skip to break
+                skip to break
             </button>
-          ) : (
+            ) : (
             <button className="timer-button" onClick={skipToWork}>
-              skip to work
+                skip to work
             </button>
-          )}
+            )}
         </div>
       </div>
       <button className="end-session-button" onClick={endSession}>
