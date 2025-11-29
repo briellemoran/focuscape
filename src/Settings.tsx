@@ -1,5 +1,6 @@
 import React from 'react';
 import './Settings.css';
+import { useStudy } from './StudyContext';
 
 interface SettingsProps {
   isOpen: boolean;
@@ -7,6 +8,8 @@ interface SettingsProps {
 }
 
 function Settings({ isOpen, onClose }: SettingsProps) {
+  const { theme, setTheme } = useStudy();
+
   return (
     <>
       {/* overlay/backdrop */}
@@ -21,8 +24,21 @@ function Settings({ isOpen, onClose }: SettingsProps) {
         
         <div className="settings-content">
           <div className="settings-section">
-            <h3>Theme</h3>
-            <p>Theme preferences coming soon...</p>
+            <h3>theme</h3>
+            <div className="theme-toggle">
+              <button 
+                className={`theme-button ${theme === 'light' ? 'active' : ''}`}
+                onClick={() => setTheme('light')}
+              >
+                light mode
+              </button>
+              <button 
+                className={`theme-button ${theme === 'dark' ? 'active' : ''}`}
+                onClick={() => setTheme('dark')}
+              >
+                dark mode
+              </button>
+            </div>
           </div>
         </div>
       </div>

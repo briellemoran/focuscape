@@ -5,10 +5,12 @@ interface StudyContextType {
   selectedBackground: string;
   customWorkTime: number;
   customBreakTime: number;
+  theme: 'light' | 'dark';
   setSelectedMethod: (method: string) => void;
   setSelectedBackground: (background: string) => void;
   setCustomWorkTime: (time: number) => void;
   setCustomBreakTime: (time: number) => void;
+  setTheme: (theme: 'light' | 'dark') => void;
 }
 
 const StudyContext = createContext<StudyContextType | undefined>(undefined);
@@ -18,6 +20,7 @@ export function StudyProvider({ children }: { children: ReactNode }) {
   const [selectedBackground, setSelectedBackground] = useState('');
   const [customWorkTime, setCustomWorkTime] = useState(25);
   const [customBreakTime, setCustomBreakTime] = useState(5);
+  const [theme, setTheme] = useState<'light' | 'dark'>('light');
 
   return (
     <StudyContext.Provider 
@@ -26,10 +29,12 @@ export function StudyProvider({ children }: { children: ReactNode }) {
         selectedBackground,
         customWorkTime,
         customBreakTime,
+        theme,
         setSelectedMethod, 
         setSelectedBackground,
         setCustomWorkTime,
-        setCustomBreakTime
+        setCustomBreakTime,
+        setTheme
       }}
     >
       {children}

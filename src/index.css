@@ -13,3 +13,71 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* light mode (default) */
+body.light-mode {
+  background-color: #F9F9F9;
+  color: black;
+}
+
+/* dark mode */
+body.dark-mode {
+  background-color: black;
+  color: white;
+}
+
+body.dark-mode .navbar-logo,
+body.dark-mode .navbar-link {
+  color: white;
+}
+
+body.dark-mode .main-page h2,
+body.dark-mode .current-time {
+  color: white;
+}
+
+body.dark-mode .start-button {
+  background-color: white;
+  color: black;
+}
+
+body.dark-mode .start-button:hover {
+  background-color: black;
+  color: white;
+  border-color: white;
+}
+
+body.dark-mode .customize-page h2,
+body.dark-mode .customize-page p {
+  color: white;
+}
+
+body.dark-mode .method-button,
+body.dark-mode .background-button {
+  background-color: black;
+  border-color: white;
+  color: white;
+}
+
+body.dark-mode .method-button.selected,
+body.dark-mode .background-button.selected {
+  background-color: white;
+  color: black;
+}
+
+body.dark-mode .start-session {
+  background-color: white;
+  color: black;
+  border-color: white;
+}
+
+body.dark-mode .start-session:hover {
+  background-color: black;
+  color: white;
+}
+
+body.dark-mode .home-page h2,
+body.dark-mode .home-page h3,
+body.dark-mode .home-content p {
+  color: white;
+}

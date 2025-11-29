@@ -9,12 +9,24 @@
   padding: 2rem;
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .main-page h2 {
   font-family: 'Source Serif 4', serif;
   font-size: clamp(40px, 8vmin, 80px); /* responsive: min 40px, max 80px, scales with viewport */
   font-weight: normal;
   color: black;
   margin: 2vh 0 -4vh 0;
+  animation: fadeIn 1s ease-out;
 }
 
 .current-time {
